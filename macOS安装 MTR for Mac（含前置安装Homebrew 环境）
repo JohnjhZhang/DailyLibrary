@@ -16,11 +16,16 @@ source ~/.zprofile
 -------------------------- 分割线 ----------------------------
 
 安装 MTR for Mac
+
 在终端中输入：
 brew install mtr
 
+验证 MTR 是否安装成功在终端中输入：
+注意：MTR 需要 root 权限才能运行，因此需要使用 sudo 命令。
+sudo mtr --version
+如果显示版本信息，则表示安装成功。      
+
 对于 Apple Silicon (M1/M2/M3/M4) 系列 Mac：
-bash
 # 进入安装目录（我安装的是版本号：0.96 仅为示例）
 cd /opt/homebrew/Cellar/mtr/0.96/sbin
 
@@ -34,6 +39,7 @@ sudo chown root /usr/local/bin/mtr
 sudo chmod u+s /usr/local/bin/mtr
 
 使用 MTR，通过以下命令测试网络（以 qq.com 为例）：
-bash
+注意：MTR 需要 root 权限才能运行，因此需要使用 sudo 命令。
 sudo mtr qq.com
 
+祝您使用愉快！
