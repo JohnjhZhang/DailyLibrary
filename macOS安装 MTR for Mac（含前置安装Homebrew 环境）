@@ -1,1 +1,39 @@
 # wiki
+安装 Homebrew 
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+注意：下载与解压安装
+
+确保 Homebrew 的路径在 PATH 环境变量中：
+# 1. 添加PATH
+echo "export PATH=$PATH:/opt/homebrew/bin" >> ~/.zprofile
+
+# 2. 保存并关闭
+source ~/.zprofile
+
+验证安装
+检查brew命令：brew -v
+
+-------------------------- 分割线 ----------------------------
+
+安装 MTR for Mac
+在终端中输入：
+brew install mtr
+
+对于 Apple Silicon (M1/M2/M3/M4) 系列 Mac：
+bash
+# 进入安装目录（我安装的是版本号：0.96 仅为示例）
+cd /opt/homebrew/Cellar/mtr/0.96/sbin
+
+# 拷贝到系统 bin 目录以便全局调用
+sudo cp mtr /usr/local/bin/
+sudo cp mtr-packet /usr/local/bin/
+
+设置权限以实现免 sudo 运行（可选）：
+bash
+sudo chown root /usr/local/bin/mtr
+sudo chmod u+s /usr/local/bin/mtr
+
+使用 MTR，通过以下命令测试网络（以 qq.com 为例）：
+bash
+sudo mtr qq.com
+
